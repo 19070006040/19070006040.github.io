@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-white">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}" style="color: black;">Trendyol</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+
+            <ul class="navbar-nav me-auto"></ul>
+
+            <form class="d-flex mx-auto ms-5" style="width: 50%;" action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <input class="form-control me-2" type="text" name="q" placeholder="Aradığınız ürün veya kategoriyi yazın" style="width: 70%; background-color: #f2f2f2; border-radius: 5px;">
+                <button class="btn btn-warning" type="submit">Ara</button>
+            </form>
+
+        </div>
+    </div>
+</nav>

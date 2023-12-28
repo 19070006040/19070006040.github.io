@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ products.product_name }} {% endblock %}
+
+{% block content %}
+    <div class="container">
+
+
+        <div class="row mt-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{% url 'index' %}" class="mt-5 mb-5">Anasayfa</a> &raquo; <a
+                        href="{% url 'product_list_by_category' products.product_category|lower %}"
+                        class="mt-3">{{ products.product_category|lower }}</a>
+                    
+                    <h3 class="card-title">{{ products.product_name }}</h3>
+                    <img class="card-img-top mx-auto mt-4" src="{{ products.product_image.url }}" alt="Card image"
+                         style="width:20%">
+                    <p class="card-tex mt-4">{{ products.product_description }}</p>
+                    <h5 class="card-text d-inline" style="color: #FF0000;">{{ products.formatted_price }} TL</h5>
+                    <a href="#" class="btn btn-warning">Sepete Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

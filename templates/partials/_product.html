@@ -1,0 +1,18 @@
+{% load static %}
+<div class="row">
+    <div class="card mt-3" style="width:350px">
+        <img class="card-img-top mx-auto" src="{{ product.product_image.url }}" alt="Card image"
+             style="width:50%">
+
+        <div class="card-body">
+            <a href="{% url 'product_details' product.slug %}" style="text-decoration: none;">
+                <h4 class="card-title">{{ product.product_name }}</h4>
+            </a>
+            <p class="card-text">{{ product.product_description|truncatewords:15|safe }}</p>
+            
+            <h5 class="card-text d-inline" style="color: #FF0000;">{{ product.formatted_price }} TL</h5>
+
+        </div>
+    </div>
+    <br>
+</div>
